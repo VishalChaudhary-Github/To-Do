@@ -1,0 +1,7 @@
+.idea
+.env
+venv
+db.sqlite3
+Dj_Pro_ToDo/__pycache__
+ToDo_app/__pycache__
+ToDo_app/migrations/__pycache__
