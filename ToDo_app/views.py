@@ -6,7 +6,10 @@ from django.urls import reverse
 
 
 def home(request):
-    context = {'task_list': ToDoTask.objects.all().order_by('-last_modified')}
+    context = {'task_list': ToDoTask.objects.all().order_by('-created_on', 'status'),
+               'total': ToDoTask.objects.all().count(),
+               'active': ToDoTask.objects.filter(status=1).count(),
+               'completed': ToDoTask.objects.filter(status=2).count()}
     return render(request, 'home.html', context=context)
 
 
